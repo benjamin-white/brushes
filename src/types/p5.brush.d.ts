@@ -1,7 +1,8 @@
 declare module 'p5.brush' {
   function load(): void
   function instance(p5: unknown): void
-  function scaleBrushes(amount: number): void
+  function scaleBrushes(factor: number): void
+  function scale(factor: number): void
   function field(type: 'curved' | 'truncated' | 'zigzag' | 'seabed' | 'waves')
   function noField(): void
   function bleed(amount: number): void

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import p5 from 'p5'
-import { sketchScript } from '../../sketches/sketch-002'
+import { sketchScript } from '../../sketches/sketch-003'
 
 const Canvas = () => {
   const ref = useRef<HTMLDivElement>(null)

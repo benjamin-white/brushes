@@ -31,17 +31,17 @@ const CONFIG = {
   color: {
     background: '#ffffff',
   },
-  palette: PALETTE[1],
+  palette: PALETTE[0],
   brushes: {
     hatch: ['marker', 'marker2'],
     stroke: ['2H', 'HB'],
   },
   grid: {
-    numCols: 2,
-    numRows: 8,
+    numCols: 3,
+    numRows: 12,
   },
-  isOutLineCanvas: true,
-  jitterAmount: 10,
+  isOutLineCanvas: false,
+  jitterAmount: 20,
   jitter: {
     all: true,
     panesX: false,
@@ -50,6 +50,11 @@ const CONFIG = {
     linesY: false,
   },
 }
+
+// GRADIENT
+// OUTSET
+// SHAPE
+// PATTERM
 
 const randomFromList = <T>(list: T[]) => list[~~(Math.random() * list.length)]
 
@@ -107,7 +112,7 @@ export const sketchScript = (p5: p5) => {
 
         p5.fill(R, G, B, 255 * 0.14)
 
-        if (Math.random() > 0.7) {
+        if (Math.random() > 0.6) {
           p5.stroke(R, G, B, 255 * 0.4)
         } else {
           p5.noStroke()
@@ -142,7 +147,7 @@ export const sketchScript = (p5: p5) => {
         brush.setHatch(
           p5.random(CONFIG.brushes.hatch),
           p5.random(CONFIG.palette) as string,
-          p5.random(0.2, 1),
+          p5.random(0.2, 0.6),
         )
 
         brush.hatch(p5.random(1, 10) * SCALE_FACTOR, p5.random(0, 180), {
@@ -152,7 +157,7 @@ export const sketchScript = (p5: p5) => {
         })
 
         brush.hatch(p5.random(1, 10) * SCALE_FACTOR, p5.random(0, 180), {
-          rand: 0.04,
+          rand: 0.06,
           continuous: true,
           gradient: true,
         })
